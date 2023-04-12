@@ -38,3 +38,86 @@ theHarvester -d test.com -l 200 -b linkedin
 https://censys.io/domain?q= 
 https://www.netcraft.com 
 https://www.shodan.io 
+
+
+<<<<Perform Footprinting Through Social Networking Sites>>>>
+
+<<Gather employees’ information from LinkedIn using theHarvester>>
+
+<<Gather personal information from various social networking sites using Sherlock>>
+cd sherlock/sherlock/
+python3 sherlock.py satya nadella
+
+<<Gather information using Followerwonk>>
+https://followerwonk.com/analyze 
+
+<<<<Perform Website Footprinting>>>>
+
+<<Gather information about a target website using ping command line utility>>
+cmd
+ping <target name>
+ping www.test.com -f -l 1500 (To obtain information on Ping Statistics such as packets sent, packets received, packets lost, and approximate round-trip time.)
+try untill you will get exact frame size
+eg. ping www.test.com -f -l 1400
+ping www.test.com -f -l 1472 
+
+ ping www.certifiedhacker.com -i 3 (to check TTL is expire or not)
+ 
+ ping www.certifiedhacker.com -i 2 -n 1 (to set the TTL value to 2 and the -n value to 1 to check the life span of the packet.)
+
+
+<<Gather information about a target website using Central Ops>>
+ https://centralops.net 
+ 
+<<To Extract a company’s data using Web Data Extractor>>
+launch Web Data Extractor
+New
+Session settings >> http://www.test.com >> ok
+start
+
+<<Mirror the target website using HTTrack Web Site Copier>>
+
+<<Gather a wordlist from the target website using CeWL>>
+cewl -d 2 -m 5 www.test.com 
+-d represents the depth to spider the website (here, 2)
+-m represents minimum word length (here, 5).
+
+<<<<Perform Whois footprinting>>>>
+http://whois.domaintools.com
+
+<<<<Perform DNS Footprinting>>>>
+
+<<Gather DNS information using nslookup command line utility and online tool>>
+cmd
+set type=a
+target name
+
+to obtain the domain's authoritative name server.
+set type=cname
+domain name
+
+after obtained the authoritative name server need to determine the IP address of the name server.
+set type=a
+enter primary name server 
+
+online search : http://www.kloth.net/services/nslookup.php
+
+<<Perform reverse DNS lookup using reverse IP domain check and DNSRecon>>
+https://www.yougetsignal.com 
+
+cmd or terminal
+dnsrecon -r start IP - End IP add
+-r :  specifies the range of IP addresses (first-last) for reverse lookup
+
+<<<<Perform Network Footprinting>>>>
+
+<<to locate the network range>>
+https://www.arin.net/about/welcome/region
+
+<<Perform network tracerouting in Windows and Linux Machines>>
+ tracert www.test.com 
+ tracert -h 5 www.test.com (to press Enter to perform the trace, but with only 5 maximum hops allowed.)
+
+
+
+
