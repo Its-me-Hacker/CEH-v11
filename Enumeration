@@ -1,0 +1,40 @@
+<<<<Perform NetBIOS enumeration>>>>
+
+<<Perform NetBIOS enumeration using Windows command-line utilities>>
+cmd
+nbtstat -a ip
+nbtstat -c 
+ -c lists the contents of the NetBIOS name cache of the remote computer.
+net use
+
+<<Perform NetBIOS enumeration using NetBIOS Enumerator>>
+
+<<Perform NetBIOS enumeration using an NSE Script>>
+nmap -sV -v --script nbstat.nse [Target IP Address]
+nmap -sU -p 137 -script nbstat.nse [Target IP Address] 
+-sU performs a UDP scan,
+-------------------------------------------------------------------------
+
+<<<<Perform SNMP enumeration>>>>
+
+<<Perform SNMP enumeration using snmp-check>>
+nmap -sU -p 161 [Target IP address] (to check port is open or not)
+snmp-check [Target IP Address]
+ 
+Perform SNMP enumeration using SoftPerfect Network Scanner
+
+-------------------------------------------------------------------------
+Perform LDAP enumeration
+Perform LDAP enumeration using Active Directory Explorer (AD Explorer)
+Perform NFS enumeration
+Perform NFS enumeration using RPCScan and SuperEnum
+Perform DNS enumeration
+Perform DNS enumeration using zone transfer
+Perform DNS enumeration using DNSSEC zone walking
+Perform RPC, SMB, and FTP enumeration
+Perform SMB enumeration using NetScanTools Pro
+Perform RPC, SMB, and FTP enumeration using Nmap
+Perform enumeration using various enumeration tools
+Enumerate information using Global Network Inventory
+Enumerate network resources using Advanced IP Scanner
+Enumerate information from Windows and Samba host using Enum4linux
