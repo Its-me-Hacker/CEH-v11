@@ -1,0 +1,93 @@
+<<<<Perform host discovery>>>>
+
+<<Perform host discovery using Nmap>>
+nmap -sn -PR <Target IP Address>
+-sn: disables port scan 
+-PR: ARP ping scan.
+-PU: UDP ping scan.
+-PE: ICMP ECHO 
+-PP: ICMP timestamp ping scan 
+-PM: ICMP address mask ping scan 
+-PS: TCP SYN Ping Scan
+-PA: TCP ACK Ping Scan
+-PO: IP Protocol Ping Scan
+
+<<<Perform host discovery using Angry IP Scanner>>>
+
+<<<<Perform port and service discovery>>>>
+-Perform port and service discovery using MegaPing
+-Perform port and service discovery using NetScanTools Pro
+
+<<Explore various network scanning techniques using Nmap>>
+ nmap -sT -v [Target IP Address]
+-sT: performs the TCP connect/full open scan
+-v: enables the verbose output (include all hosts and ports in the output)
+-sX: performs the Xmas scan
+-sM: performs the TCP Maimon scan
+-sA: performs the ACK flag probe scan
+-sU: performs the UDP scan
+-sV: detects service versions
+
+<<Explore various network scanning techniques using Hping3>>
+hping3 -A <Target IP Address> -p 80 -c 5
+ -A specifies setting the ACK flag, 
+ -p specifies the port to be scanned (here, 80),  
+ -c specifies the packet count (here, 5).
+
+ hping3 -8 0-100 -S [Target IP Address] -V (to demonstrate open ports along with the name of service running on each open port)
+  -8 specifies a scan mode, 
+  -p specifies the range of ports to be scanned (here, 0-100),
+  -V specifies the verbose mode
+ 
+ hping3 -F -P -U [Target IP Address] -p 80 -c 5 (to demonstrate that the number of packets sent and received is equal)
+  -F specifies setting the FIN flag, 
+  -P specifies setting the PUSH flag, 
+  -U specifies setting the URG flag, 
+  -c specifies the packet count
+  -p specifies the port to be scanned
+  
+ hping3 --scan 0-100 -S [Target IP Address] (to check open ports and names of the services running on the target IP address)
+--scan specifies the port range to scan, 0-100 specifies the range of ports to be scanned
+-S specifies setting the SYN flag.
+
+<<<<Perform OS discovery>>>>
+
+<<Identify the target system’s OS with Time-to-Live (TTL) and TCP window sizes using Wireshark>>
+cmd
+ping target ip
+wireshark
+check ttl value
+
+<<Perform OS discovery using Nmap Script Engine (NSE)>>
+nmap -A <IP>
+nmap -O <ip>
+nmap --script smb-os-discovery.nse <Target IP Address>
+
+<<Perform OS discovery using Unicornscan>>
+
+<<<<<Scan beyond IDS and Firewall>>>>>
+
+<<Scan beyond IDS/firewall using various evasion techniques>>
+1) nmap -f [Target IP Address]
+ -f switch is used to split the IP packet into tiny fragment packets.
+2)nmap -g 80 [Target IP Address], 
+-g or --source-port option to perform source port manipulation.
+3)nmap -mtu 8 [Target IP Address] 
+-mtu: specifies the number of Maximum Transmission Unit (MTU) 
+4) nmap -D RND:10 [Target IP Address] 
+-D: performs a decoy scan and RND: generates a random and non-reserved IP addresses.
+5) nmap [Target IP Address] --data 0xdeadbeef
+6) nmap [Target IP Address] --data-string “Ph34r my l33t skills
+7) nmap --data-length 5 [Target IP Address]
+8)  nmap --randomize-hosts [Target IP Address]
+9)  nmap --badsum [Target IP Address] 
+
+
+Create custom packets using Colasoft Packet Builder to scan beyond IDS/firewall>>
+
+<<Create custom UDP and TCP packets using Hping3 to scan beyond IDS/firewall>>
+ hping3 [Target IP Address] --udp --rand-source --data 500
+ --udp specifies sending the UDP packets to the target host, 
+ --rand-source enables the random source mode 
+ --data specifies the packet body size.
+
