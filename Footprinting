@@ -1,5 +1,6 @@
-<<Gather information using advanced Google hacking techniques>>
+<<<< Perform Footprinting Through Search Engines >>>>
 
+<<Gather information using advanced Google hacking techniques>>
 intitle:login site:test.com
 test.com filetype:pdf ( To search your results based on the file extension.)
 cache:www.test.org ( This operator allows you to view cached version of the web page.)
@@ -7,3 +8,33 @@ allinurl: test career (This operator restricts results to pages containing all t
 inurl: copy site:www.test.org ( This operator restricts the results to pages containing the word specified in the URL)
 allintitle: detect malware ( This operator restricts results to pages containing all the query terms specified in the title)
 location: Test (This operator finds information for a specific location.)
+
+<<Gather Information from Video Search Engines>>
+https://www.youtube.com 
+https://mattw.io/youtube-metadata
+
+<<Gather Information from FTP Search Engines>>
+https://www.searchftps.net/
+
+<<Gather Information from IoT Search Engines>>
+https://www.shodan.io/
+
+<<<< Perform Footprinting Through Web Services >>>>
+
+<<To Find the Company’s Domains and Sub-domains using Netcraft>>
+https://www.netcraft.com 
+Site report
+
+<<Gather Personal Information using PeekYou Online People Search Service>>
+https://www.peekyou.com
+
+<<Gather an Email List using theHarvester>>
+theHarvester -d test.com -l 200 -b baidu 
+theHarvester -d test.com -l 200 -b linkedin 
+
+<<Gather Information using Deep and Dark Web Searching>>
+
+<<Determine Target OS Through Passive Footprinting>>
+https://censys.io/domain?q= 
+https://www.netcraft.com 
+https://www.shodan.io 
