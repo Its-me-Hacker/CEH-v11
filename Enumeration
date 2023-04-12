@@ -33,13 +33,40 @@ nmap -p 2049 [Target IP Address]
 cd SuperEnum 
 echo "10.10.10.19" >> Target.txt (to create file)
 ./superenum
+chmod +x superenum
+./superenum (wait for result)
+cd ..
+cd RPCScan
+python3 rpc-scan.py [Target IP address] --rpc 
 
-Perform DNS enumeration
-Perform DNS enumeration using zone transfer
-Perform DNS enumeration using DNSSEC zone walking
-Perform RPC, SMB, and FTP enumeration
-Perform SMB enumeration using NetScanTools Pro
-Perform RPC, SMB, and FTP enumeration using Nmap
+---------------------------------------------------------------------------
+
+<<<<Perform DNS enumeration>>>>
+<<Perform DNS enumeration using zone transfer>>
+dig ns [Target Domain] 
+dig @[[NameServer]] [[Target Domain]] axfr
+
+Using nslookup
+set querytype=soa
+target domain name
+ls -d [Name Server]
+
+<<Perform DNS enumeration using DNSSEC zone walking>>
+dnsrecon -h
+dnsrecon -d [Target domain] -z
+
+------------------------------------------------------------------------------
+
+<<<<Perform RPC, SMB, and FTP enumeration>>>>
+<<Perform SMB enumeration using NetScanTools Pro>>
+
+<<Perform RPC, SMB, and FTP enumeration using Nmap>>
+ nmap -p 21 [Target IP Address]
+ nmap -T4 -A [Target IP Address] 
+ nmap -p [Target Port] -A [Target IP Address]
+ 
+  
+ 
 Perform enumeration using various enumeration tools
 Enumerate information using Global Network Inventory
 Enumerate network resources using Advanced IP Scanner
