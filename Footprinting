@@ -1,0 +1,9 @@
+<<Gather information using advanced Google hacking techniques>>
+
+intitle:login site:test.com
+test.com filetype:pdf ( To search your results based on the file extension.)
+cache:www.test.org ( This operator allows you to view cached version of the web page.)
+allinurl: test career (This operator restricts results to pages containing all the query terms specified in the URL)
+inurl: copy site:www.test.org ( This operator restricts the results to pages containing the word specified in the URL)
+allintitle: detect malware ( This operator restricts results to pages containing all the query terms specified in the title)
+location: Test (This operator finds information for a specific location.)
