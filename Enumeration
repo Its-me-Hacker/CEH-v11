@@ -21,13 +21,19 @@ nmap -sU -p 137 -script nbstat.nse [Target IP Address]
 nmap -sU -p 161 [Target IP address] (to check port is open or not)
 snmp-check [Target IP Address]
  
-Perform SNMP enumeration using SoftPerfect Network Scanner
+<<Perform SNMP enumeration using SoftPerfect Network Scanner>>
 
 -------------------------------------------------------------------------
-Perform LDAP enumeration
-Perform LDAP enumeration using Active Directory Explorer (AD Explorer)
-Perform NFS enumeration
-Perform NFS enumeration using RPCScan and SuperEnum
+<<<<Perform LDAP enumeration>>>>
+<<Perform LDAP enumeration using Active Directory Explorer (AD Explorer)>>
+-------------------------------------------------------------------------
+<<<<Perform NFS enumeration>>>>
+<<Perform NFS enumeration using RPCScan and SuperEnum>>
+nmap -p 2049 [Target IP Address]
+cd SuperEnum 
+echo "10.10.10.19" >> Target.txt (to create file)
+./superenum
+
 Perform DNS enumeration
 Perform DNS enumeration using zone transfer
 Perform DNS enumeration using DNSSEC zone walking
