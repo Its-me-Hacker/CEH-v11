@@ -1,1 +1,38 @@
+*******Footprint the web infrastructure**********
 
+<<Perform web application reconnaissance>>
+
+
+<<Perform web application reconnaissance using WhatWeb>>
+
+
+<<Perform web spidering using OWASP ZAP>>
+
+<<Detect load balancers using various tools>>
+dig test.com
+
+
+<<Identify web server directories>>
+
+<<Perform web application vulnerability scanning using Vega>>
+
+<<Identify clickjacking vulnerability using iframe>>
+---------------------------------------------------------------------------------
+
+***********Perform web application attacks**************
+
+<<Perform a brute-force attack using Burp Suite>>
+
+<<Perform parameter tampering using Burp Suite>>
+
+<<Exploit parameter tampering and XSS vulnerabilities in web applications>>
+
+<<Perform cross-site request forgery (CSRF) attack>>
+
+<<Enumerate and hack a web application using WPScan and Metasploit>>
+
+<<Exploit a remote command execution vulnerability to compromise a target web server>>
+
+<<Exploit a file upload vulnerability at different security levels>>
+
+<<Gain backdoor access via a web shell using Weevely>>
