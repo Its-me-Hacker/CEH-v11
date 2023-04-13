@@ -26,10 +26,12 @@ lbd test.com (displaying the available DNS load balancers used by the target web
 <<Identify web server directories>>
 nmap -sV --script=http-enum [target domain or IP address] (displaying open ports and services, along with their version)
 
+gobuster dir -u [Target Website] -w /home/attacker/Desktop/common.txt (displaying the identified web server directories)
 
 <<Perform web application vulnerability scanning using Vega>>
 
 <<Identify clickjacking vulnerability using iframe>>
+
 ---------------------------------------------------------------------------------
 
 ***********Perform web application attacks**************
