@@ -1,18 +1,31 @@
 *******Footprint the web infrastructure**********
 
 <<Perform web application reconnaissance>>
+Use tools such as Netcraft (https://www.netcraft.com), 
+SmartWhois (https://www.tamos.com), 
+WHOIS Lookup (http://whois.domaintools.com), 
+Batch IP Converter (http://www.sabsoft.com) to perform the Whois lookup.
 
+Use tools such as Professional Toolset (https://tools.dnsstuff.com), 
+DNSRecon (https://github.com), and 
+DNS Records (https://network-tools.com), 
+Domain Dossier (https://centralops.net) to perform DNS interrogation.
 
 <<Perform web application reconnaissance using WhatWeb>>
-
+whatweb -h (for help)
+whatweb www.test.com (to perform website footprinting on the target website.)
+whatweb -v www.test.com ( to run a verbosity scan on the target website.)
+whatweb --log-verbose=MovieScope_Report www.moviescope.com ( to export the results returned by WhatWeb as a text file.)
 
 <<Perform web spidering using OWASP ZAP>>
 
 <<Detect load balancers using various tools>>
-dig test.com
-
+dig test.com (displaying the available load balancers of the target website)
+lbd test.com (displaying the available DNS load balancers used by the target website)
 
 <<Identify web server directories>>
+nmap -sV --script=http-enum [target domain or IP address] (displaying open ports and services, along with their version)
+
 
 <<Perform web application vulnerability scanning using Vega>>
 
