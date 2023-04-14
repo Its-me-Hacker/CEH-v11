@@ -65,8 +65,27 @@ getuid
 <<User system monitoring and surveillance using Spytech SpyAgent>>
 
 <<Hide files using NTFS streams>>
+ensure that the C: drive file system is in NTFS format. To do so, navigate to This PC, right-click Local Disk (C:), and click Properties.
+Now, go to the C: drive, create a New Folder, and name it magic.
+Navigate to the location C:\Windows\System32, copy calc.exe, and paste it to the C:\magic location.
+cmd
+type cd C:\magic, 
+notepad readme.txt
+The readme.txt - Notepad file appears; write some text in it (here, HELLO WORLD!!). and save file
+dir
+type c:\magic\calc.exe > c:\magic\readme.txt:calc.exe
+dir
+Navigate to the directory C:\magic and delete calc.exe.
+type mklink backdoor.exe readme.txt:calc.exe
+type backdoor.exe
 
 <<Hide data using white space steganography>>
+cmd
+cd C:\Users\Admin\Desktop\Snow
+Create a Notepad file, type Hello World!, and press Enter
+snow -C -m "My swiss bank account number is 45656684512263" -p "magic" readme.txt readme2.txt
+snow -C -p "magic" readme2.txt
+
 
 <<Image steganography using OpenStego>>
 
