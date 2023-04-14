@@ -1,0 +1,33 @@
+*********************Perform active sniffing************************
+
+Perform MAC flooding using macof
+Perform a DHCP starvation attack using Yersinia
+Perform ARP poisoning using arpspoof
+Perform an Man-in-the-Middle (MITM) attack using Cain & Abel
+Spoof a MAC address using TMAC and SMAC
+
+******************Perform network sniffing using various sniffing tools****************************
+
+<<Perform password sniffing using Wireshark>>
+
+turn on wireshark on attacker machine and click ethernet 
+start 
+on victim machin open target website and login
+after login stop capturing and save file.
+In the display filter field, type http.request.method == POST
+Wireshark only filters http POST traffic packets
+Now, click Edit from the menu bar and click Find Packet….
+Click Display filter, select String from the drop-down options. 
+Click Packet list, select Packet details from the drop-down options.
+click Narrow & Wide and select Narrow (UTF-8 / ASCII) from the drop-down options.
+In the field next to String, type pwd and click the Find button.
+Expand the HTML Form URL Encoded: application/x-www-form-urlencoded 
+
+
+Analyze a network using the Omnipeek Network Protocol Analyzer
+Analyze a network using the SteelCentral Packet Analyzer
+Detect network sniffing
+
+**********************Detect ARP poisoning in a switch-based network***************************
+Detect ARP attacks using XArp
+Detect promiscuous mode using Nmap and NetScanTools Pro
