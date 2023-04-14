@@ -1,9 +1,18 @@
 **************************Perform intrusion detection using various tools*****************
 
-Detect intrusions using Snort
-Detect malicious network traffic using ZoneAlarm FREE FIREWALL 2019
-Detect malicious network traffic using HoneyBOT
-Evade firewalls using various evasion techniques
+<<Detect intrusions using Snort>>
 
-Bypass windows firewall using Nmap evasion techniques
-Bypass firewall rules using HTTP/FTP tunneling
+
+<<Detect malicious network traffic using ZoneAlarm FREE FIREWALL 2019>>
+
+<<Detect malicious network traffic using HoneyBOT>>
+
+
+-------------------------------------------------------------------------------------------
+
+************************Evade firewalls using various evasion techniques*****************
+
+
+<<Bypass windows firewall using Nmap evasion techniques>>
+
+<<Bypass firewall rules using HTTP/FTP tunneling>>
